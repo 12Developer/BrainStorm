@@ -8,7 +8,10 @@ class Users extends React.Component {
       editUserIsVisible: false,
       home: true,
       users: [],
-      user: {}
+      user: {},
+      loggedUser: null,
+      errorNoUser: false,
+      errorWrongPassword: false
     }
     this.toggleState = this.toggleState.bind(this)
     this.getUsers = this.getUsers.bind(this)
@@ -17,7 +20,39 @@ class Users extends React.Component {
     this.handleCreate = this.handleCreate.bind(this)
     this.handleCreateSubmit = this.handleCreateSubmit.bind(this)
     this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
+    this.setUser = this.setUser.bind(this)
+    this.logOut = this.logOut.bind(this)
   }
+
+  loginUser = (new_user) => {
+    this.setState({ errorNoUser: false,
+                    errorWrongPassword: false})
+    fetch("/users/find'" + new_user.username + "'")
+    .then(response => response.json())
+    .then(logged_user => {
+      if(new_user.password === logged_user.password) {
+        this.setUser(logged_user)
+        {/*this.state.ideaList */}
+      } else {
+        this.setState({ errorWrongPassword: true})
+        console.log("Wrong Password");
+      }
+    }).catch(error => {
+      console.log(error);
+      this.setState({ errorNoUser: true})
+    })
+  }
+
+  setUser = (newUser) => {
+    if(newUser != null){
+      newUser["password"] = '*****'
+    }
+    this.setState({loggedUser: newUser})
+  }
+  logOut = () => {
+    this.setUser(null)
+  }
+
   componentDidMount = () =>{
     this.getUsers()
   }
@@ -96,12 +131,12 @@ class Users extends React.Component {
 }
   render () {
     return (
-      <div className='users column'>
+      <div>
         <NavBar toggleState={this.toggleState}/>
-        <h2> Users</h2>
-        {this.state.login && !(this.state.signup) ? <Login toggleState={this.toggleState} users={this.state.users} getUser={this.getUser} deleteUser={this.deleteUser}/> : ''}
+        {this.state.login && !(this.state.signup) ? <Login toggleState={this.toggleState} users={this.state.users} getUser={this.getUser} deleteUser={this.deleteUser} login={true} functionExecute={this.loginUser} errorNoUser={this.state.errorNoUser} errorWrongPassword={this.state.errorWrongPassword}/> : ''}
         {this.state.signup ? <Signup toggleState={this.toggleState} handleCreate={this.handleCreate} handleSubmit={this.handleCreateSubmit} /> : ''}
         {this.state.userIsVisible ? <User toggleState={this.toggleState } user={this.state.user} handleSubmit={this.handleUpdateSubmit}/> : ''}
+        <UsersList users={this.state.users} deleteUser={this.deleteUser} toggleState={this.toggleState} getUser={this.getUser} />
       </div>
     )
   }

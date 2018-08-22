@@ -1,6 +1,10 @@
 .container {
-  min-width: 100%
-
+  display: flex;
+  width: 95vw;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: space-around;
+  border: 1px solid black;
 }
 
 h1 {
@@ -10,6 +14,7 @@ h1 {
 
 .NavBar {
   display: flex;
+  width: 95vw;
   justify-content: space-around;
   padding: 10px;
   background: RGB(254, 209, 0)
@@ -19,6 +24,8 @@ h1 {
   background-color: #FFFBDA;
   width: 225px;
   height: 225px;
+  position: relative;
+  float: left;
 }
 
 input, textarea {
@@ -35,7 +42,7 @@ textarea {
 }
 
 p {
-  position: absolute;
+  float: left;
   right: 5px;
   color: red;
   &:hover {
@@ -45,9 +52,4 @@ p {
 
 .NavBarUsername {
   color: RGB(0, 155, 58)
-}
-
-ul, li {
-  margin: 1em;
-  float: left;
 }
