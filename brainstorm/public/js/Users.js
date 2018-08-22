@@ -6,12 +6,16 @@ class Users extends React.Component {
       signup: false,
       userIsVisible: false,
       editUserIsVisible: false,
+      ideaList: false,
       home: true,
       users: [],
       user: {},
       loggedUser: null,
       errorNoUser: false,
-      errorWrongPassword: false
+      errorWrongPassword: false,
+      selectedUser: null,
+      userLogin: false,
+      userShow: false
     }
     this.toggleState = this.toggleState.bind(this)
     this.getUsers = this.getUsers.bind(this)
@@ -22,6 +26,13 @@ class Users extends React.Component {
     this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this)
     this.setUser = this.setUser.bind(this)
     this.logOut = this.logOut.bind(this)
+    this.changeSelectedUser = this.changeSelectedUser.bind(this)
+    this.loginUser = this.loginUser.bind(this)
+  }
+
+  changeSelectedUser = (new_user) => {
+    new_user["password"] = "*****";
+    this.setState({selectedUser: new_user});
   }
 
   loginUser = (new_user) => {
@@ -32,7 +43,7 @@ class Users extends React.Component {
     .then(logged_user => {
       if(new_user.password === logged_user.password) {
         this.setUser(logged_user)
-        {/*this.state.ideaList */}
+        this.toggleState("ideaList")
       } else {
         this.setState({ errorWrongPassword: true})
         console.log("Wrong Password");
@@ -73,8 +84,8 @@ class Users extends React.Component {
         return createdUser.json()
       })
       .then(jsonedUser => {
-        this.handleCreate(jsonedUser)
-        this.toggleState('signup', 'login')
+        this.loginUser(jsonedUser)
+        // this.toggleState('signup', 'login')
       })
       .catch(error => console.log(error))
   }
@@ -132,8 +143,9 @@ class Users extends React.Component {
   render () {
     return (
       <div>
-        <NavBar toggleState={this.toggleState}/>
-        {this.state.login && !(this.state.signup) ? <Login toggleState={this.toggleState} users={this.state.users} getUser={this.getUser} deleteUser={this.deleteUser} login={true} functionExecute={this.loginUser} errorNoUser={this.state.errorNoUser} errorWrongPassword={this.state.errorWrongPassword}/> : ''}
+        <NavBar toggleState={this.toggleState} loggedUser={this.state.loggedUser} logOut={this.logOut} changeSelectedUser={this.changeSelectedUser}/>
+        {/*{this.state.login && !(this.state.signup) ? <Login toggleState={this.toggleState} users={this.state.users} getUser={this.getUser} deleteUser={this.deleteUser} login={true} functionExecute={this.loginUser} errorNoUser={this.state.errorNoUser} errorWrongPassword={this.state.errorWrongPassword} loggedUser={this.state.loggedUser} changeSelectedUser={this.state.changeSelectedUser} /> : ''}*/}
+        {this.state.login ? <Login login={true} functionExecute={this.loginUser} errorNoUser={this.state.errorNoUser} errorWrongPassword={this.state.errorWrongPassword} /> : ''}
         {this.state.signup ? <Signup toggleState={this.toggleState} handleCreate={this.handleCreate} handleSubmit={this.handleCreateSubmit} /> : ''}
         {this.state.userIsVisible ? <User toggleState={this.toggleState } user={this.state.user} handleSubmit={this.handleUpdateSubmit}/> : ''}
         <UsersList users={this.state.users} deleteUser={this.deleteUser} toggleState={this.toggleState} getUser={this.getUser} />

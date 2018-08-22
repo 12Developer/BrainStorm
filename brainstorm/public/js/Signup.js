@@ -29,7 +29,7 @@ class Signup extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="container">
       <h1>Signup</h1>
       <form onSubmit={this.handleSubmit}>
           <label className='label' for='username'>Username</label>
