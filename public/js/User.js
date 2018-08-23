@@ -9,7 +9,7 @@ class User extends React.Component {
               this.props.togglePage("userShow");}}>
                 {this.props.loggedUser.user_name}
           </h3>
-          <button className="button is-info" onClick={() => this.props.togglePage("ideaForm")}>New Idea</button>
+          
         </div>
       </div>
     )

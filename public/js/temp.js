@@ -97,7 +97,7 @@ class App extends React.Component {
   //this.state.loggedUser is used for user functionality (only logged in users can idea, for example)
   setUser(new_user){
     if(new_user != null){
-      new_user["password"] = "Nice Try";
+      new_user["password"] = "*****";
     }
     this.setState({loggedUser: new_user});
   }

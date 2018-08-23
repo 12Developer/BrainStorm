@@ -11096,3 +11096,118 @@ Processing by IdeasController#index as */*
 Completed 200 OK in 25ms (Views: 3.4ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/users" for 127.0.0.1 at 2018-08-23 14:48:49 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Completed 200 OK in 25ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:06 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 9ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:07 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'god'" for 127.0.0.1 at 2018-08-23 14:49:11 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'god'"}
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:11 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:18 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:19 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:49:21 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:07 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:09 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'god'" for 127.0.0.1 at 2018-08-23 14:50:11 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'god'"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:11 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:28 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:29 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'god'" for 127.0.0.1 at 2018-08-23 14:50:33 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'god'"}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:33 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:36 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:50:39 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ideas" for 127.0.0.1 at 2018-08-23 14:51:00 -0700
+Processing by IdeasController#create as HTML
+  Parameters: {"idea_title"=>"earth savior", "idea_content"=>"project earth from evil", "user_id"=>37, "idea"=>{"idea_title"=>"earth savior", "idea_content"=>"project earth from evil", "user_id"=>37}}
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:51:00 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 14:51:08 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 15:05:07 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
