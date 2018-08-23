@@ -74,15 +74,6 @@ class App extends React.Component {
   //If successful it logs the returned user into the state creating a session
   //Logged in users are then brought back to the main page (ideaList)
   createUser(new_user){
-    // console.log("Creating new User");
-    // console.log(new_user);
-    if(new_user.avatar === ""){
-      new_user.avatar = "https://robohash.org/quiullamet.png?size=300x300&set=set1";
-    }
-
-
-
-
     fetch("/users", {
       body: JSON.stringify(new_user),
       method: "POST",
@@ -119,11 +110,11 @@ class App extends React.Component {
 
   //Function calls the server to login user
   //Function first sets the login error messages to false to prevent them from showing up
-  //Then the function looks for the user_name in the database
+  //Then the function looks for the username in the database
   //If the username is found it checks the password in the database against the submitted password
   //If the passwords match, log in that user
   //If the passwords do NOT match, set the corresponding error message to true and do nothing else
-  //If the user_name is NOT found, set the corresponding error message to true and do nothing else
+  //If the username is NOT found, set the corresponding error message to true and do nothing else
   loginUser(new_user){
     // console.log("Logging In User");
     // console.log(new_user);
@@ -156,12 +147,6 @@ class App extends React.Component {
   //Function calls the back end with the information from old_user and updates the user
   //The loggedUser is then updated and the user is redirected back to the main page (ideaList)
   editUser(old_user){
-    // console.log("Editing User");
-    // console.log(old_user);
-    if(old_user.avatar === ""){
-      old_user.avatar = "https://robohash.org/quiullamet.png?size=300x300&set=set1";
-    }
-
     fetch("/users/" + old_user.id, {
       body: JSON.stringify(old_user),
       method: "PUT",
@@ -203,11 +188,9 @@ class App extends React.Component {
     const default_idea = [];
     default_idea.push({
       id: 0,
-      idea_content: "No one has ideaed anything yet!  Login and claim your birth right of creating the first idea!",
-      image: "",
-      user_id: -1,
-      user_name: "Quitter Dev",
-      avatar: "https://d1ielco78gv5pf.cloudfront.net/assets/clear-495a83e08fc8e5d7569efe6339a1228ee08292fa1f2bee8e0be6532990cb3852.gif"
+      idea_title: "Deafault title",
+      idea_content: "Default Content",
+      user_id: -1
     })
     // console.log(default_idea);
     this.setState({ideas: default_idea});
@@ -237,8 +220,7 @@ class App extends React.Component {
       if(copy_array[0]["user_id"] == -1){
         copy_array.pop();
       }
-      jsonedIdea["user_name"] = this.state.loggedUser.user_name;
-      jsonedIdea["avatar"] = this.state.loggedUser.avatar;
+      jsonedIdea["username"] = this.state.loggedUser.username;
       // console.log([jsonedIdea, ...this.state.ideas]);
       //New ideas are pushed to the top automatically
       copy_array.unshift(jsonedIdea);
