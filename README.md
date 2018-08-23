@@ -1,24 +1,14 @@
-# README
+Brainstorm is an app where users can store their ideas to their account.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Technologies Used
+HTML
+CSS
+Javascript
+React
+Ruby on Rails
+Postgres
 
-Things you may want to cover:
+Users have a one to many relationship with ideas.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://github.com/12Developer/BrainStorm
+https://agile-sierra-89921.herokuapp.com/

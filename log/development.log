@@ -11211,3 +11211,30 @@ Processing by IdeasController#index as */*
 Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 15:20:18 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero'" for 127.0.0.1 at 2018-08-23 15:20:22 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero'"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/user.rb:144:in `findByName'
+app/controllers/users_controller.rb:14:in `showName'
+Started GET "/users/find/'mightyducks'" for 127.0.0.1 at 2018-08-23 15:20:37 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'mightyducks'"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 15:20:37 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.0ms)
+
+
