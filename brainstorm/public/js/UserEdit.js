@@ -1,4 +1,4 @@
-class Signup extends React.Component {
+class UserEdit extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -30,7 +30,7 @@ class Signup extends React.Component {
   render () {
     return (
       <div className="container">
-      <h1>Signup</h1>
+      <h1>Edit User</h1>
       <form onSubmit={this.handleSubmit}>
           <label className='label' for='username'>Username</label>
           <div className='control'>
@@ -41,7 +41,7 @@ class Signup extends React.Component {
             <input className='input' type='text' id='password' onChange={this.handleChange} value={this.state.password} ref="password"/>
           </div>
           <div className='control'>
-            <input className='button is-primary' type='submit' value="Register"/>
+            <input className='button is-primary' type='submit' value="Update"/>
           </div>
       </form>
       </div>

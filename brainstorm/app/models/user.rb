@@ -52,7 +52,7 @@ class User
           FROM users
           LEFT JOIN ideas
             ON ideas.user_id = users.id
-          WHERE users.id =#{id};
+          WHERE users.id =#{id}
         SQL
     )
     ideas = []

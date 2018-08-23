@@ -1,4 +1,7 @@
 class IdeasList extends React.Component {
+  constructor(props){
+    super(props)
+  }
   render () {
     console.log(this.props);
     return (

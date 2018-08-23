@@ -10,11 +10,9 @@ class IdeaForm extends React.Component {
     }
     componentDidMount = () => {
       if(this.props.idea) {
-        this.setState({
-          idea_title: this.props.idea.idea_title,
-          idea_content: this.props.idea.idea_content,
-          id: this.props.idea.id
-        })
+          this.refs.idea_title.value = this.props.idea.idea_title
+          this.refs.idea_content.value = this.props.idea.idea_content
+          // id: this.props.idea.id
       }
     }
 
@@ -25,7 +23,16 @@ class IdeaForm extends React.Component {
 
     handleSubmit = (event) => {
       event.preventDefault()
-      this.props.handleSubmit(this.state)
+      const new_idea = {
+        idea_title: this.refs.idea_title.value.replace(/'/g, ""),
+        idea_content: this.refs.idea_content.value.replace(/'/g, ""),
+        user_id: this.props.loggedUser.id
+      }
+      if(this.props.idea){
+        new_idea["id"] = this.props.idea.id
+      }
+      // this.props.handleSubmit(this.state)
+      this.props.functionExecute(new_idea)
   }
   render () {
     return (
@@ -33,12 +40,12 @@ class IdeaForm extends React.Component {
         <div className="idea">
           <form onSubmit={this.handleSubmit}>
             <p>X</p>
-            <input type="text" id="idea_title" onChange={this.handleChange} value={this.state.idea_title} ref="idea_title" />
-            <textarea name="idea_content" id="idea_content"onChange={this.handleChange} value={this.state.idea_content} ref="idea_content"/>
-            <input type="submit" value="submit"/>
+            <input type="text" id="idea_title"   ref="idea_title" />
+            <textarea name="idea_content" id="idea_content"  ref="idea_content"/>
+            <input type="submit"/>
           </form>
         </div>
-      </div>  
+      </div>
     )
   }
 }
