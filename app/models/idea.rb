@@ -6,7 +6,6 @@ class Idea
       DB = PG.connect(:host => "localhost", :port => 5432, :dbname => 'ideaApp_development')
   end
 
-
   def self.all
     results = DB.exec("SELECT * FROM ideas;")
     return results.map do |result|
