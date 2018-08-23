@@ -11,8 +11,8 @@ class IdeasList extends React.Component {
           <form>
             <div className="idea">
               <p onClick={()=>this.props.deleteIdea(idea, index)}>X</p>
-              <input onClick={()=> {this.props.toggleState('ideasListIsVisible', 'ideaIsVisible');  this.props.getIdeas(idea)}}/>{idea.idea_title}
-              <textarea onClick={()=> {this.props.toggleState('ideasListIsVisible', 'ideaIsVisible'); this.props.getIdeas(idea)}}>{idea.idea_content}</textarea>
+              <input type="text"/>{idea.idea_title}
+              <textarea>{idea.idea_content}</textarea>
             </div>
           </form>
         )

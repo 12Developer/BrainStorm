@@ -9,8 +9,9 @@ class Form extends React.Component {
     if(this.props.loggedUser){
       // console.log("Logged In User:");
       // console.log(this.props.loggedUser);
-      this.refs.user_name.value = this.props.loggedUser.user_name;
-      this.refs.avatar.value = this.props.loggedUser.avatar;
+      this.refs.username.value = this.props.loggedUser.username;
+      this.refs.password.value = this.props.loggedUser.password;
+
     }
   }
 
@@ -24,7 +25,7 @@ class Form extends React.Component {
 
     //Create new user from the form data
     const new_user = {
-      user_name: this.refs.user_name.value.replace(/'/g, ""),
+      username: this.refs.username.value.replace(/'/g, ""),
       password: this.refs.password.value.replace(/'/g, "")
     }
 
@@ -55,9 +56,9 @@ class Form extends React.Component {
           : ''
         }
         <form onSubmit={this.handleSubmit}>
-          <label className="label" for="user_name">Username</label>
+          <label className="label" for="username">Username</label>
           <div className="control">
-            <input className="input" type="text" id="user_name" ref="user_name" required />
+            <input className="input" type="text" id="username" ref="username" required />
           </div>
           <label className="label" for="password">Password</label>
           <div className="control">

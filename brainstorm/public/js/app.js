@@ -129,7 +129,7 @@ class App extends React.Component {
     // console.log(new_user);
     this.setState({ errorNoUser: false,
                     errorWrongPassword: false});
-    fetch("/users/find/'" + new_user.user_name + "'")
+    fetch("/users/find/'" + new_user.username + "'")
       .then(response => response.json())
         .then(logged_user => {
           if(new_user.password === logged_user.password){
@@ -148,7 +148,7 @@ class App extends React.Component {
   //Function changes the selected user.
   //Selected User is used to dislay user show pages
   changeSelectedUser(new_user){
-    new_user["password"] = "Nice Try";
+    new_user["password"] = "*****";
     this.setState({selectedUser: new_user});
   }
 
@@ -339,126 +339,27 @@ class App extends React.Component {
       <div className="container">
 
       {/* A Nav Bar that will be stuck to the top of the page */}
-        <NavBar
-          togglePage={this.togglePage}
-          loggedUser={this.state.loggedUser}
-          logOut={this.logOut}
-          changeSelectedUser={this.changeSelectedUser}/>
+        <NavBar togglePage={this.togglePage} loggedUser={this.state.loggedUser} logOut={this.logOut} changeSelectedUser={this.changeSelectedUser}/>
 
         {/* Conditionals that display the rest of the website's content */}
         {/*Idea Listing Section (Default Main Page) for guest users */}
-        {
-          this.state.page.ideaList && !(this.state.loggedUser) ?
-            <div className="container">
-              <IdeasList
-                changeSelectedUser={this.changeSelectedUser}
-                togglePage = {this.togglePage}
-                ideas={this.state.ideas}
-                loggedUser={ {id: 0} }
-                selectIdea={this.selectIdea}/>
-            </div>
-          : ''
-        }
+        {this.state.page.ideaList && !(this.state.loggedUser) ? <div className="container"><IdeasList changeSelectedUser={this.changeSelectedUser} togglePage = {this.togglePage} ideas={this.state.ideas} loggedUser={ {id: 0} } selectIdea={this.selectIdea}/>
+        </div> : ''}
         {/* If the user is logged in, display their information at the top of the page along with the ideaList section */}
-        {
-          this.state.page.ideaList && this.state.loggedUser ?
-            <span>
-              <User
-                loggedUser={this.state.loggedUser}
-                togglePage={this.togglePage}
-                changeSelectedUser={this.changeSelectedUser}/>
-              <IdeasList
-                changeSelectedUser={this.changeSelectedUser}
-                ideas={this.state.ideas}
-                loggedUser={this.state.loggedUser}
-                togglePage={this.togglePage}
-                deleteIdea={this.deleteIdea}
-                selectIdea={this.selectIdea}
-                />
-            </span>
-          : ''
-        }
-        {/*User Registration Section*/}
-        {
-          this.state.page.signup ?
-            <Form
-              functionExecute={this.createUser}
-              title="Register"/>
-          : ''
-        }
-        {/*User Login Section*/}
-        {
-          this.state.page.login ?
-            <Form
-              login={true}
-              functionExecute={this.loginUser}
-              title="User Login"
-              errorNoUser={this.state.errorNoUser}
-              errorWrongPassword={this.state.errorWrongPassword}/>
-          : ''
-        }
-        {/* User Edit Page */}
-        {
-          this.state.page.userEdit ?
-            <Form
-              functionExecute={this.editUser}
-              title="Edit User"
-              loggedUser={this.state.loggedUser}/>
-          : ''
-        }
-        {/* User Show Page */}
-        {
-          this.state.page.userShow ?
-            <UserShow
-              loggedUser={this.state.loggedUser}
-              selectedUser={this.state.selectedUser}
-              togglePage={this.togglePage}
-              ideaFinder={this.ideaFinder}/>
-          : ''
-        }
+        {this.state.page.ideaList && this.state.loggedUser ? <div><User loggedUser={this.state.loggedUser} togglePage={this.togglePage} changeSelectedUser={this.changeSelectedUser}/>
+        <IdeasList changeSelectedUser={this.changeSelectedUser} ideas={this.state.ideas} loggedUser={this.state.loggedUser} togglePage={this.togglePage} deleteIdea={this.deleteIdea} selectIdea={this.selectIdea}/></div> : ''}
+        {this.state.page.signup ? <Form functionExecute={this.createUser} title="Register"/> : ''}
+        {this.state.page.login ? <Form login={true} functionExecute={this.loginUser} title="Login" errorNoUser={this.state.errorNoUser} errorWrongPassword={this.state.errorWrongPassword}/> : ''}
+        {this.state.page.userEdit ? <Form functionExecute={this.editUser} title="Edit" loggedUser={this.state.loggedUser}/> : ''}
+        {this.state.page.userShow ? <UserShow loggedUser={this.state.loggedUser} selectedUser={this.state.selectedUser} togglePage={this.togglePage} ideaFinder={this.ideaFinder} deleteIdea={this.deleteIdea}/>: ''}
         {/* Create Idea Section */}
-        {
-          this.state.page.ideaForm ?
-            <IdeaForm
-              togglePage={this.togglePage}
-              loggedUser={this.state.loggedUser}
-              functionExecute={this.createIdea}/>
-          : ''
-        }
+        {this.state.page.ideaForm ? <IdeaForm togglePage={this.togglePage} loggedUser={this.state.loggedUser} functionExecute={this.createIdea}/> : ''}
         {/* Edit Idea Section */}
-        {
-          this.state.page.ideaEdit ?
-            <IdeaForm
-              togglePage={this.togglePage}
-              loggedUser={this.state.loggedUser}
-              functionExecute={this.editIdea}
-              idea={this.state.selectedIdea}/>
-          : ''
-        }
+        {this.state.page.ideaEdit ? <IdeaForm togglePage={this.togglePage} loggedUser={this.state.loggedUser} functionExecute={this.editIdea} idea={this.state.selectedIdea}/> : ''}
         {/* Show idea page with logged in users */}
-        {
-          this.state.page.ideaShow && this.state.loggedUser ?
-            <IdeasList
-              loggedUser={this.state.loggedUser}
-              togglePage={this.togglePage}
-              changeSelectedUser={this.changeSelectedUser}
-              idea={this.state.selectedIdea}
-              ideaIndex={this.state.selectedIdeaIndex}
-              deleteIdea={this.deleteIdea}/>
-          : ''
-        }
+        {this.state.page.ideaShow && this.state.loggedUser ? <IdeasList loggedUser={this.state.loggedUser} togglePage={this.togglePage} changeSelectedUser={this.changeSelectedUser} idea={this.state.selectedIdea} ideaIndex={this.state.selectedIdeaIndex} deleteIdea={this.deleteIdea}/> : ''}
         {/* Show Idea page with guests */}
-        {
-          this.state.page.ideaShow && !(this.state.loggedUser) ?
-            <IdeasList
-              loggedUser={ {id: 0} }
-              togglePage={this.togglePage}
-              changeSelectedUser={this.changeSelectedUser}
-              idea={this.state.selectedIdea}
-              ideaIndex={this.state.selectedIdeaIndex}
-              deleteIdea={this.deleteIdea}/>
-          : ''
-        }
+        {this.state.page.ideaShow && !(this.state.loggedUser) ? <IdeasList loggedUser={ {id: 0} } togglePage={this.togglePage} changeSelectedUser={this.changeSelectedUser} idea={this.state.selectedIdea} ideaIndex={this.state.selectedIdeaIndex} deleteIdea={this.deleteIdea}/> : ''}
 
       </div>
     )
