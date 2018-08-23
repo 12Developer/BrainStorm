@@ -3,15 +3,7 @@ class User extends React.Component {
     return (
       <div>
         <div>
-          <div>
-            <img
-              src={this.props.loggedUser.avatar}
-              onClick={() => {
-                  this.props.changeSelectedUser(this.props.loggedUser);
-                  this.props.togglePage("userShow");}}/>
-          </div>
           <h3
-            className="user_welcome"
             onClick={() => {
               this.props.changeSelectedUser(this.props.loggedUser);
               this.props.togglePage("userShow");}}>

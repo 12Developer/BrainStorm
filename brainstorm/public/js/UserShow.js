@@ -13,7 +13,6 @@ class UserShow extends React.Component {
                   <p onClick={()=>this.props.deleteIdea(idea, index)}>X</p>
                   <input/>{idea.idea_title}
                   <textarea>{idea.idea_content}</textarea>
-                  <h3>{this.props.selectedUser.username}</h3>
                 </div>
 
           )}

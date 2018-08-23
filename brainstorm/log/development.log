@@ -10607,3 +10607,213 @@ Processing by IdeasController#index as */*
 Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:18:39 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:18:42 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:18:53 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero'" for 127.0.0.1 at 2018-08-23 12:18:57 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero'"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:18:57 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:19:26 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:19:32 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero'" for 127.0.0.1 at 2018-08-23 12:19:37 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:19:37 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:05 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:07 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:09 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:11 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:15 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ideas" for 127.0.0.1 at 2018-08-23 12:20:36 -0700
+Processing by IdeasController#create as HTML
+  Parameters: {"idea_title"=>"grocery", "idea_content"=>"go to wholefoods", "user_id"=>11, "idea"=>{"idea_title"=>"grocery", "idea_content"=>"go to wholefoods", "user_id"=>11}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:36 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:42 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:48 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero'" for 127.0.0.1 at 2018-08-23 12:20:52 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:20:52 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:00 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:26 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:30 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero'" for 127.0.0.1 at 2018-08-23 12:21:34 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:34 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:39 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:42 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/users/11" for 127.0.0.1 at 2018-08-23 12:21:47 -0700
+Processing by UsersController#update as HTML
+  Parameters: {"username"=>"cordero123", "password"=>"[FILTERED]", "id"=>"11", "user"=>{"username"=>"cordero123", "password"=>"[FILTERED]", "id"=>"11"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:21:47 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:22:15 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:22:19 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:22:20 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero123'" for 127.0.0.1 at 2018-08-23 12:22:25 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero123'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero123'" for 127.0.0.1 at 2018-08-23 12:22:28 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero123'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2018-08-23 12:22:42 -0700
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{}}
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:26:03 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:26:09 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/find/'cordero123'" for 127.0.0.1 at 2018-08-23 12:26:14 -0700
+Processing by UsersController#showName as */*
+  Parameters: {"name"=>"'cordero123'"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:26:14 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-23 12:26:28 -0700
+Processing by IdeasController#index as */*
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
